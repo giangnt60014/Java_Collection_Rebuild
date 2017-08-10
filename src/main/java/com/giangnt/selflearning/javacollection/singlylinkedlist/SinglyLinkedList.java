@@ -1,8 +1,9 @@
 package com.giangnt.selflearning.javacollection.singlylinkedlist;
+
 /**
  * Created by giangnguyen on 2017-08-10.
  */
-public class SinglyLinkedListApp {
+public class SinglyLinkedList {
     public static Node insert(Node head, Node newNode) {
 
         // first node to be inserted
@@ -25,11 +26,22 @@ public class SinglyLinkedListApp {
         return head;
     }
 
+    public static void removeTail(Node head) {
+        while (head.next != null) {
+            if (head.next.next == null) {
+                // deleting last node
+                head.next = null;
+            } else {
+                // not the last >> move to next node
+                head = head.next;
+            }
+        }
+    }
+
     public static void prepareList(Node head, int data) {
 
-        while (head.next != null){
+        while (head.next != null) {
             head = head.next;
-            System.out.printf("head = "+ head.data);
         }
         head.next = new Node(data);
     }

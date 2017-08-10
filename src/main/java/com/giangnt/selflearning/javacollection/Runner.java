@@ -6,7 +6,7 @@ import com.giangnt.selflearning.javacollection.singlylinkedlist.SinglyLinkedList
 public class Runner {
     public static void main(String[] args) {
 
-        int[] listData = {1, 3, 5, 7, 9};
+        int[] listData = {1, 3, 5, 7, 9, 10, 13, 15};
         Node head = new Node(listData[0]);
 
         for (int count = 1; count < listData.length; count++) {
@@ -24,6 +24,11 @@ public class Runner {
 
         SinglyLinkedList.removeTail(head);
         System.out.printf("3. Singly linked list after removing tail node is : ");
+        SinglyLinkedList.print(head);
+
+        int compareVal = 6;
+        SinglyLinkedList.removeIfGreaterThan(compareVal, head);
+        System.out.printf("4. Singly linked list after removing nodes greater than %d is : ", compareVal);
         SinglyLinkedList.print(head);
     }
 }
